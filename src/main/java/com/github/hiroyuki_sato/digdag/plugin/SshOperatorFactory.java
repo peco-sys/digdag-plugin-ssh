@@ -160,6 +160,11 @@ public class SshOperatorFactory
                         throw new ConfigException("private key not set");
                     }
 
+					// by yokoe -->
+					logger.info(String.format("private key = %s", privateKey.get()));
+					logger.info(String.format("public key = %s", publicKey.get()));
+					// <-- by yokoe
+
                     OpenSSHKeyFile keyfile = new OpenSSHKeyFile();
 
                     keyfile.init(privateKey.get(), publicKey.get());
